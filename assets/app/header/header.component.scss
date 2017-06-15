@@ -1,0 +1,76 @@
+.header-wrapper {
+    display: grid;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    grid-template-rows: 15px auto 15px;
+    grid-template-columns: 30px 175px auto auto 60px;
+}
+
+.company-logo {
+    grid-column: 2;
+    grid-row: 2 / 3;
+    justify-self: center;
+    cursor: pointer;
+}
+
+.search-bar {
+    grid-column: 3;
+    grid-row: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    width: 450px;
+    position: relative;
+
+  input {
+    padding: 20px;
+    width: 75%;
+    font-size: 14px;
+    border: solid 1px #2C3E50;
+    text-indent: 30px;
+    outline: none;
+  }
+
+  .mag-glass {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+  }
+}
+
+.nav-menu {
+  grid-column: 4;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: end;
+
+
+  a {
+    margin-right: 45px;
+    text-decoration: none;
+    color: #2B3E51;
+    font-size: 14px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+
+    &:hover {
+      color: darken(#2B3E51, 25%);
+    }
+
+    &.take-a-tour {
+      border: solid 1px #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      color: #00A084;
+
+      &:hover {
+        background: #00A084;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+

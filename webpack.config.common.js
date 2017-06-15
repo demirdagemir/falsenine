@@ -18,7 +18,27 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [{ loader: 'raw-loader' }]
-            }
+            },
+              {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loaders: ['raw-loader', 'resolve-url-loader','sass-loader' ]
+              },
+          {
+            test: /\.(png|jpg|gif|svg)$/,
+            use: [
+              {
+                loader: 'url-loader',
+                options: {
+                  limit: 81111192
+                }
+              }
+            ]
+          },
+          {
+            test: /\.(png|jpe?g|gif|woff|woff2|ttf|eot|ico)$/,
+            loader: 'file-loader?name=assets/[name].[hash].[ext]'
+          }
         ],
         exprContextCritical: false
 

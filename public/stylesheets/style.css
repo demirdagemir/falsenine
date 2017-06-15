@@ -1,8 +1,10 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0; }
 
-a {
-  color: #00B7FF; }
+body {
+  display: grid; }
 
 /*# sourceMappingURL=style.css.map */

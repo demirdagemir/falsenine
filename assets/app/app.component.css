@@ -1,3 +1,25 @@
-h1 {
-  color: peru;
+.body {
+  display: grid;
+  font-family: 'Fira Sans', sans-serif;';
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  grid-template-rows: 100px auto 100px;
+  grid-template-columns: minmax(200px, 3fr) 9fr;
+  grid-template-areas: "header header"
+  "content content"
+  "footer footer";
+}
+
+header-component {
+  grid-area: header;
+}
+
+main {
+  grid-area: content;
+}
+
+footer {
+  grid-area: footer;
 }
