@@ -1,0 +1,28 @@
+.content-wrapper {
+  display: grid;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  grid-template-rows: 15px auto 15px;
+  grid-template-columns: 150px auto 100px;
+}
+
+.title-wrapper {
+
+  grid-column: 2;
+  grid-row: 2 / 3;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #2B3E51;
+
+    span {
+      color: #00A084;
+    }
+  }
+
+
+
+}

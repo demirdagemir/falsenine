@@ -16,7 +16,7 @@ header-component {
   grid-area: header;
 }
 
-main {
+home-content {
   grid-area: content;
 }
 
