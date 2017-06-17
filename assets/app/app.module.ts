@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser'
 import { HeaderComponent } from "./header/header.component";
 import {FormsModule} from "@angular/forms";
 import {HomeContentComponent} from "./home_content/home-content.component";
+import {FooterComponent} from "./footer/footer.component";
 
 @NgModule({
   declarations: [
       AppComponent,
       HeaderComponent,
-      HomeContentComponent
+      HomeContentComponent,
+      FooterComponent
   ],
   imports: [BrowserModule, FormsModule],
   bootstrap: [AppComponent]

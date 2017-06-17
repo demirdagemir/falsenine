@@ -5,7 +5,7 @@
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  grid-template-rows: 100px auto 100px;
+  grid-template-rows: 100px auto 200px;
   grid-template-columns: minmax(200px, 3fr) 9fr;
   grid-template-areas: "header header"
   "content content"
@@ -20,6 +20,6 @@ home-content {
   grid-area: content;
 }
 
-footer {
+home-footer {
   grid-area: footer;
 }
