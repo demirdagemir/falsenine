@@ -1,5 +1,7 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import HeaderLogo from "./logo_with_title.svg"
+import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'header-component',
@@ -7,12 +9,20 @@ import HeaderLogo from "./logo_with_title.svg"
     styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
-    images = {
-        logo: 'search_bar_inspection_glass.svg'
-    };
-    search = {
-        query: ''
+export class HeaderComponent implements OnInit {
+
+    constructor(private router: Router){}
+
+    searchForm: FormGroup;
+
+    onSubmit() {
+        console.log(this.searchForm);
+        this.router.navigate(['/player']);
     }
 
+    ngOnInit() {
+        this.searchForm = new FormGroup({
+            searchQuery: new FormControl(null)
+        });
+    }
 }

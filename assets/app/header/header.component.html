@@ -3,8 +3,15 @@
         <img src='logo_with_title.svg' alt='Logo' />
     </div>
     <div class='search-bar'>
-        <img class='mag-glass' src='search_bar_inspection_glass.svg' alt='Magnifying glass' />
-        <input class='search-input' type='text' [(ngModel)]='search.query' placeholder='Type your favorite team, player or the game...'>
+        <form [formGroup]='searchForm' (ngSubmit)='onSubmit()'>
+            <img class='mag-glass' src='search_bar_inspection_glass.svg' alt='Magnifying glass' />
+            <input id="search"
+                   formControlName="searchQuery"
+                   class='search-input'
+                   type='text'
+                   placeholder='Type your favorite team, player or the game...'
+            >
+        </form>
     </div>
     <div class='nav-menu'>
         <a class='take-a-tour' href=''>
