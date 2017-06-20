@@ -18,8 +18,10 @@ header-component {
 
 home-content {
   grid-area: content;
+  display: grid;
 }
 
 home-footer {
   grid-area: footer;
+  display: grid;
 }

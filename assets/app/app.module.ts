@@ -8,6 +8,7 @@ import {FooterComponent} from "./footer/footer.component";
 import {PlayerComponent} from "./player_profile/player.component";
 import {routing} from "./app.routing";
 import {LandingComponent} from "./landing/landing.component";
+import {PlayerAttributesComponent} from "./player_profile/player_attributes/player-attributes.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {LandingComponent} from "./landing/landing.component";
       HeaderComponent,
       HomeContentComponent,
       FooterComponent,
-      PlayerComponent
+      PlayerComponent,
+      PlayerAttributesComponent
   ],
   imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule],
   bootstrap: [AppComponent]
