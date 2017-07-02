@@ -1,0 +1,104 @@
+.login-modal {
+  font-family: 'Fira Sans', sans-serif;
+  display: none;
+
+  .login-form {
+    display: grid;
+    grid-template-rows: 300px 285px 70px;
+    grid-row-gap: 15px;
+  }
+  form {
+    display: grid;
+    grid-row: 1;
+    grid-template-rows: 40px repeat(3, 60px);
+    grid-row-gap: 15px;
+
+    input {
+      border: solid 1px #CCC;
+      border-radius: 5px;
+      text-indent: 10px;
+      font-size: 18px;
+      font-family: 'Fira Sans', sans-serif;
+    }
+
+    .login-with-different {
+      grid-row: 1;
+      text-align: center;
+      color: #2C3E50;
+
+      .fb {
+        color: #3B5998;
+      }
+
+      .google {
+        color: #DD5347;
+      }
+    }
+
+    .email-login {
+      grid-row: 2;
+    }
+
+    .password-login {
+      grid-row: 3;
+    }
+
+    .submit-login {
+      grid-row: 4;
+      position: relative;
+      background-color: #F39C12;
+      border: solid 1px #979797;
+      border-radius: 5px;
+      outline: none;
+      font-size: 18px;
+      color: #FFFFFF;
+      font-family: 'Fira Sans', sans-serif;
+      cursor: pointer;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: color, background-color;
+      transition-property: color, background-color;
+
+      &:hover {
+        background: #16A085;
+        color: #FFFFFF;
+      }
+
+      img {
+        position: absolute;
+        left: 10px;
+      }
+    }
+  }
+
+  .player-background {
+    width: 285px;
+    height: 285px;
+    justify-self: center;
+    grid-row: 2;
+  }
+
+  .no-account {
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 300px auto 50px;
+    border-top: solid 1px #CCC;
+    padding-top: 25px;
+    color: #2C3E50;
+    justify-content: center;
+
+    a {
+      color: #F39C12;
+      text-decoration: none;
+      outline: none;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: color, background-color;
+      transition-property: color, background-color;
+
+      &:hover {
+        color: #16A085;
+      }
+    }
+  }
+}
