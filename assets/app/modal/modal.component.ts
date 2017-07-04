@@ -7,5 +7,15 @@ import { Component } from '@angular/core'
 })
 
 export class ModalComponent {
-    content = 'Some content';
+    public visible = false;
+    public modalVisible = ''
+
+    public show(modal: String): void {
+        this.visible = true;
+        this.modalVisible = modal;
+    }
+
+    public hide(): void {
+        this.visible = false;
+    }
 }

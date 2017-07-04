@@ -17,11 +17,12 @@
         <a class='take-a-tour'>
             Take a Tour
         </a>
-        <a ng-click="showSignUpModal()">
+        <a (click)='modal.show("signup")'>
            Sign Up
         </a>
-        <a ng-click="showLoginModal()">
+        <a (click)='modal.show("login")'>
             Log In
         </a>
     </div>
 </div>
+<modal-component #modal></modal-component>

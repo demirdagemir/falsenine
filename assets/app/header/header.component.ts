@@ -1,5 +1,4 @@
 import {Component, OnInit} from "@angular/core";
-import HeaderLogo from "./logo_with_title.svg"
 import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 

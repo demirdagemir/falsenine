@@ -7,5 +7,7 @@ import { Component } from '@angular/core'
 })
 
 export class SignupModalComponent {
-    content = 'Some content';
+    showModal () {
+        console.log("showed modal");
+    }
 }
