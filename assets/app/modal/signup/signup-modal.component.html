@@ -8,19 +8,18 @@
             <div class='or'>or</div>
             <div class='divider-line'></div>
         </div>
-        <form action=''>
-
-            <input class='ff' type='text' id='tt' name='tt' placeholder='Which team you are totally in love with?' />
-            <input class='ff' type='text' id='tt' name='tt' placeholder='Who is your favorite player?' />
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <input class='ff' type='text' id='favoriteTeam' name='favoriteTeam' placeholder='Which team you are totally in love with?' formControlName='favoriteTeam' />
+            <input class='ff' type='text' id='favoritePlayer' name='favoritePlayer' placeholder='Who is your favorite player?' formControlName='favoritePlayer' />
             <span class='omit'>You don't have to specify your favorite player/team if you don't want to.</span>
-            <input class='half-input-left' type='text' id='tt' name='tt' placeholder='First Name' />
-            <input class='half-input-right' type='text' id='tt' name='tt' placeholder='Last Name' />
-            <input class='ff' type='text' id='tt' name='tt' placeholder='Username' />
-            <input class='half-input-left' type='password' id='password_signup' placeholder='Password'>
-            <input class='half-input-right' type='password' id='password_signup' placeholder='Retype password'>
-            <input class='email-signup' type='email' id='email_signup' name='email_signup' placeholder='Email Address' />
+            <input class='half-input-left' type='text' id='firstName' name='firstName' placeholder='First Name' formControlName='firstName'/>
+            <input class='half-input-right' type='text' id='lastName' name='lastName' placeholder='Last Name' formControlName='lastName' />
+            <input class='ff' type='text' id='username' name='username' placeholder='Username' formControlName='username' />
+            <input class='half-input-left' type='password' id='password' name='password' placeholder='Password' formControlName='password' />
+            <input class='half-input-right' type='password' id='confirm_password' placeholder='Retype password' />
+            <input class='email-signup' type='email' id='email' name='email' placeholder='Email Address' formControlName='email' />
             <span class='privacy'>By signing up, I agree to False Nine’s Terms of Service, Nondiscrimination Policy, Payments Terms of Service, Privacy Policy, Player Rights Policy, and Player Guarantee Terms.</span>
-            <button class='submit-signup' type='submit'>Signup</button>
+            <button class='submit-signup' type='submit' [disabled]='!signUpForm.valid'>Signup</button>
         </form>
         <div class="no-account">
             <span class="already">Already have an account?</span>

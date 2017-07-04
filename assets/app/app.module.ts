@@ -12,6 +12,8 @@ import {PlayerAttributesComponent} from "./player_profile/player_attributes/play
 import {ModalComponent} from "./modal/modal.component";
 import {LoginModalComponent} from "./modal/login/login-modal";
 import {SignupModalComponent} from "./modal/signup/signup-modal.component";
+import {HttpModule} from "@angular/http";
+import {AuthService} from "./modal/authentication/auth.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {SignupModalComponent} from "./modal/signup/signup-modal.component";
       LoginModalComponent,
       SignupModalComponent
   ],
-  imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule, HttpModule],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 
