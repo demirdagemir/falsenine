@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import {AuthService} from "../modal/authentication/auth.service";
 
 @Component({
     selector: 'header-component',
@@ -10,7 +11,7 @@ import {Router} from "@angular/router";
 
 export class HeaderComponent implements OnInit {
 
-    constructor(private router: Router){}
+    constructor(private router: Router, private authService: AuthService){}
 
     searchForm: FormGroup;
 
@@ -23,5 +24,14 @@ export class HeaderComponent implements OnInit {
         this.searchForm = new FormGroup({
             searchQuery: new FormControl(null)
         });
+    }
+
+    onLogout() {
+        this.authService.logout();
+        this.router.navigateByUrl('/');
+    }
+
+    isLoggedIn() {
+        return this.authService.isLoggedIn();
     }
 }

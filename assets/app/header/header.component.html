@@ -17,11 +17,14 @@
         <a class='take-a-tour'>
             Take a Tour
         </a>
-        <a (click)='modal.show("signup")'>
+        <a (click)='modal.show("signup")' *ngIf='!isLoggedIn()'>
            Sign Up
         </a>
-        <a (click)='modal.show("login")'>
+        <a (click)='modal.show("login")' *ngIf='!isLoggedIn()'>
             Log In
+        </a>
+        <a (click)='onLogout()' *ngIf='isLoggedIn()'>
+            Log Out
         </a>
     </div>
 </div>
