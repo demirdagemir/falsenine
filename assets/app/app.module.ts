@@ -14,6 +14,7 @@ import {LoginModalComponent} from "./modal/login/login-modal";
 import {SignupModalComponent} from "./modal/signup/signup-modal.component";
 import {HttpModule} from "@angular/http";
 import {AuthService} from "./modal/authentication/auth.service";
+import {ExComponent} from "./excomponent"
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AuthService} from "./modal/authentication/auth.service";
       PlayerAttributesComponent,
       ModalComponent,
       LoginModalComponent,
-      SignupModalComponent
+      SignupModalComponent,
+      ExComponent
   ],
   imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule, HttpModule],
   providers: [AuthService],
