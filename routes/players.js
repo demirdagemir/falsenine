@@ -3,23 +3,33 @@ var router = express.Router();
 var Player = require('../models/player');
 var axios = require('axios');
 
-/* Get Player */
-router.get('/', function (req, res, next) {
-    var data;
-    var config = {
-    headers: { 'X-Auth-Token': '3cc7236eb92146f7a14d8af2c5397c00' },
-    method: 'GET' }
+/* Create Player */
+router.post('/create', function(req, res, next) {
+  var player = new Player({
+    name: req.body.name,
+    marketValue: req.body.marketValue,
+    dateOfBirth: req.body.dateOfBirth,
+    contractedUntil: req.body.contractedUntil,
+    nation_id: req.body.nation_id,
+    club_id: req.body.club_id,
+    jerseyNumber: req.body.jerseyNumber,
+    position: req.body.pos,
+    photoDir: req.body.photoDir
+  })
 
-    fetch('http://api.football-data.org/v1/competitions/', config)
-    .done(function(response) {
-        data = response.data;
-    }).catch(function (error) {
-        console.log(error);
-        return error;
-    });
+  player.save(function (err, result) {
+    if (err) {
+      return res.status(500).json({
+        title: 'An error occurred',
+        error: err
+      })
+    }
 
-    //console.log(data);
-    return res.json(data);
+    res.status(201).json({
+      message: 'Player successfully created',
+      obj: result
+    })
+  })
 });
 
 module.exports = router;
