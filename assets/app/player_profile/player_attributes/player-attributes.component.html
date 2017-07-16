@@ -1,48 +1,47 @@
-<div class='attributes technical'>
+<div class='attributes technical' *ngIf="attributes">
     <div class='attribute-header'>Technical</div>
-        <div class='up'>Corners</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-        <div>Crossing</div>
-        <div>Dribbling</div>
-        <div>Finishing</div>
-        <div>First Touch</div>
-        <div class='down'>Free Kick Taking</div><img src='../rating_triangle_down.svg' alt='Rating Up or Down'>
-        <div>Heading</div>
-        <div>Long Shots</div>
-        <div>Long Throws</div>
-        <div class='up'>Marking</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-        <div>Passing</div>
-        <div>Penalty Taking</div>
-        <div>Tackling</div>
-        <div class='up'>Technique</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+        <div>Crossing <span class='attribute_value'>{{attributes.technical.Crossing}}</span></div>
+        <div>Dribbling <span class='attribute_value'>{{attributes.technical.Dribbling}}</span></div>
+        <div>Finishing <span class='attribute_value'>{{attributes.technical.Finishing}}</span></div>
+        <div>First Touch <span class='attribute_value'>{{attributes.technical.FirstTouch}}</span></div>
+        <div class='down'>Free Kick Taking <span class='attribute_value'>{{attributes.technical.FreeKickTaking}}</span></div><img src='../rating_triangle_down.svg' alt='Rating Up or Down'>
+        <div>Heading <span class='attribute_value'>{{attributes.technical.Heading}}</span></div>
+        <div>Long Shots <span class='attribute_value'>{{attributes.technical.LongShots}}</span></div>
+        <div>Long Throws <span class='attribute_value'>{{attributes.technical.LongThrows}}</span></div>
+        <div class='up'>Marking <span class='attribute_value'>{{attributes.technical.Marking}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+        <div>Passing <span class='attribute_value'>{{attributes.technical.Passing}}</span></div>
+        <div>Penalty Taking <span class='attribute_value'>{{attributes.technical.PenaltyTaking}}</span></div>
+        <div>Tackling <span class='attribute_value'>{{attributes.technical.Tackling}}</span></div>
+        <div class='up'>Technique <span class='attribute_value'>{{attributes.technical.Technique}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
     </div>
-<div class='attributes mental'>
+<div class='attributes mental' *ngIf="attributes">
     <div class='attribute-header'>Mental</div>
-    <div class='up'>Aggression</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div>Anticipation</div>
-    <div>Bravery</div>
-    <div class='down'>Composure</div><img src='../rating_triangle_down.svg' alt='Rating Up or Down'>
-    <div>Concentration</div>
-    <div>Decision</div>
-    <div>Determination</div>
-    <div>Flair</div>
-    <div>Leadership</div>
-    <div>Off the Ball</div>
-    <div>Positioning</div>
-    <div class='up'>Teamwork</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div>Vision</div>
-    <div>Work Rate</div>
+    <div class='up'>Aggression <span class='attribute_value'>{{attributes.mental.Aggression}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <div>Anticipation <span class='attribute_value'>{{attributes.mental.Anticipation}}</span></div>
+    <div>Bravery <span class='attribute_value'>{{attributes.mental.Bravery}}</span></div>
+    <div class='down'>Composure <span class='attribute_value'>{{attributes.mental.Composure}}</span></div><img src='../rating_triangle_down.svg' alt='Rating Up or Down'>
+    <div>Concentration <span class='attribute_value'>{{attributes.mental.Concentration}}</span></div>
+    <div>Decision <span class='attribute_value'>{{attributes.mental.Decision}}</span></div>
+    <div>Determination <span class='attribute_value'>{{attributes.mental.Determination}}</span></div>
+    <div>Flair <span class='attribute_value'>{{attributes.mental.Flair}}</span></div>
+    <div>Leadership <span class='attribute_value'>{{attributes.mental.Leadership}}</span></div>
+    <div>Off the Ball <span class='attribute_value'>{{attributes.mental.OfftheBall}}</span></div>
+    <div>Positioning <span class='attribute_value'>{{attributes.mental.Positioning}}</span></div>
+    <div class='up'>Teamwork <span class='attribute_value'>{{attributes.mental.Teamwork}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <div>Vision <span class='attribute_value'>{{attributes.mental.Vision}}</span></div>
+    <div>Work Rate <span class='attribute_value'>{{attributes.mental.WorkRate}}</span></div>
 </div>
-<div class='attributes physical'>
+<div class='attributes physical' *ngIf="attributes">
     <div class='attribute-header'>Physical</div>
-    <div class='up'>Acceleration</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div class='up'>Agility</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div class='up'>Balance</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div class='up'>Jumping Reach</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div class='up'>Natural Fitness</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div>Pace</div>
-    <div>Stamina</div>
-    <div>Strength</div>
-    <div>Goalkeeper Rating</div>
+    <img src='../rating_triangle.svg' alt='Rating Up or Down'><div class='up'>Acceleration <span class='attribute_value'>{{attributes.physical.Acceleration}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <div class='up'>Agility <span class='attribute_value'>{{attributes.physical.Agility}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <div class='up'>Balance <span class='attribute_value'>{{attributes.physical.Balance}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <div class='up'>Jumping Reach <span class='attribute_value'>{{attributes.physical.JumpingReach}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <div class='up'>Natural Fitness <span class='attribute_value'>{{attributes.physical.NaturalFitness}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <div>Pace <span class='attribute_value'>{{attributes.physical.Pace}}</span></div>
+    <div>Stamina <span class='attribute_value'>{{attributes.physical.Stamina}}</span></div>
+    <div>Strength <span class='attribute_value'>{{attributes.physical.Strength}}</span></div>
+    <div>Goalkeeper Rating <span class='attribute_value'>{{attributes.physical.GoalkeeperRating}}</span></div>
 </div>
 <div class='attributes similar'>
     <div class='attribute-header'>Other Players in Bayern München</div>

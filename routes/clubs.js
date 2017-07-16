@@ -11,4 +11,13 @@ router.get('/getTeamId/:name', function(req,res,next) {
   )
 });
 
+router.get('/getPlayerClubById/:id', function(req,res,next) {
+  Club.findOne({_id: req.params.id}, function (err, club) {
+      res.json({
+        club: club
+      });
+    }
+  )
+});
+
 module.exports = router;

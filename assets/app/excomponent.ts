@@ -2,8 +2,8 @@ import { Component } from '@angular/core'
 import {Headers, Http, Response} from "@angular/http";
 import 'rxjs/Rx';
 import {Observable} from "rxjs/Observable";
-import {Player} from "./viewModels/player.model";
-import axios from "axios";
+
+/* This class is not used anywhere in the application. It's used for debugging purposes as well as populating the DB with an api. */
 
 @Component({
     selector: 'ex-component',
@@ -12,9 +12,14 @@ import axios from "axios";
 
 export class ExComponent {
     public players = [];
+    public nationId = "";
 
     constructor(private http: Http) {
-        for(let i = 1; i < 2; i++) {
+        this.getPlayerById("596a53f1c6f20f7f938ea888")
+            .subscribe(data => console.log(data),
+            error => console.log(error));
+        /*
+        for(let i = 20; i < 21; i++) {
             this.getTeam(i).subscribe(
                 data => {
                     const teamName = data.name;
@@ -24,18 +29,16 @@ export class ExComponent {
                         this.getPlayersFromTeam(i).subscribe(
                             data => {
                                 var players = data.players.map(function (player) {
-                                    this.getNationId(player.nationality).subscribe(
-                                        data => {
                                             var playerJson = {
-                                                ...player,
-                                                club: {
-                                                    "$ref": "club",
-                                                    "$id": `ObjectId("${teamId}")`
-                                                },
-                                                nation: {
-                                                    "$ref": "nation",
-                                                    "$id": `ObjectId("${data.nationId}")`
-                                                },
+                                                    name: player.name,
+                                                    position: player.position,
+                                                    jerseyNumber: player.jerseyNumber,
+                                                    dateOfBirth: player.dateOfBirth,
+                                                    nationality: player.nationality,
+                                                    contractUntil: player.contractUntil,
+                                                    marketValue: player.marketValue,
+                                                    club_id: teamId,
+                                                    nation_name: player.nationality,
                                                 attributes: {
                                                     physical: {
                                                         Acceleration: 0,
@@ -81,9 +84,6 @@ export class ExComponent {
                                                     }
                                                 }
                                             };
-                                        },
-                                        error => console.log(error)
-                                    );
                                         return playerJson;
                                 }, this);
 
@@ -101,6 +101,7 @@ export class ExComponent {
                 error => console.log(error)
             );
         }
+        */
     }
 
     getData () {
@@ -133,9 +134,17 @@ export class ExComponent {
 
     getNationId (nationName :string) {
         const headers = new Headers({'Content-Type' : 'application/json'});
-        return this.http.get(`http://localhost:3000/nations/getNationId/${nationName}`, {headers: headers})
+        this.http.get(`http://localhost:3000/nations/getNationId/${nationName}`, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error.json()));
+        return this.nationId;
     }
+
+    getPlayerById (id :string) {
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.get(`http://localhost:3000/players/getPlayerById/${id}`, {headers: headers})
+            .map((response: Response) => response.json());
+    }
+
 
 }

@@ -110,7 +110,7 @@ player-attributes-component {
   }
 }
 .three {
-  grid-column: 4;
+  grid-column: 5;
   display: grid;
   grid-template-columns: 20px repeat(4, 1fr) 20px;
   grid-template-rows: 20% repeat(3, 1fr) 15%;
@@ -186,7 +186,6 @@ player-attributes-component {
   height: 85%;
   max-height: 250px;
   max-width: 220px;
-  border: solid 1px #ccc;
   background: #FFFFFF;
   align-self: center;
   justify-self: center;

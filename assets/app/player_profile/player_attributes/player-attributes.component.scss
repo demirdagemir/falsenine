@@ -78,6 +78,12 @@
     padding-left: 5px;
     align-self: center;
     font-size: 14px;
+
+    .attribute_value {
+      float: right;
+      font-weight: 500;
+      margin-right: 10px;
+    }
   }
 
   img {

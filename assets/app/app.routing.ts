@@ -5,7 +5,7 @@ import {ExComponent} from "./excomponent"
 
 const APP_ROUTES: Routes = [
     { path: '', component: LandingComponent, pathMatch: 'full'},
-    { path: 'player', component: PlayerComponent },
+    { path: 'player/:id', component: PlayerComponent },
     { path: 'ex', component: ExComponent }
 ];
 
