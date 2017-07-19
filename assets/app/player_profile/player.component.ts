@@ -1,10 +1,9 @@
 import {Component, Injectable, OnDestroy, OnInit} from '@angular/core'
 import {ActivatedRoute} from "@angular/router";
-import {Player} from "../viewModels/player.model";
+import {Player, Attributes, PhysicalAttributes, MentalAttributes, TechnicalAttributes} from "../viewModels/player.model";
 import {PlayerService} from "./player.service";
 import {Club} from "../viewModels/club.model";
 import {Nation} from "../viewModels/nation.model";
-import {PlayerAttributesComponent} from "./player_attributes/player-attributes.component";
 import {Observable} from "rxjs/Observable";
 
 @Component({
@@ -42,11 +41,52 @@ export class PlayerComponent implements OnInit, OnDestroy {
                     data.player.club_id,
                     data.player.jerseyNumber,
                     data.player.position,
-                    data.player.attributes.technical,
-                    data.player.attributes.mental,
-                    data.player.attributes.physical
+                    new Attributes(
+                        new PhysicalAttributes(
+                            data.player.attributes.physical.Acceleration,
+                            data.player.attributes.physical.Agility,
+                            data.player.attributes.physical.Balance,
+                            data.player.attributes.physical.JumpingReach,
+                            data.player.attributes.physical.NaturalFitness,
+                            data.player.attributes.physical.Pace,
+                            data.player.attributes.physical.Stamina,
+                            data.player.attributes.physical.Strength,
+                            data.player.attributes.physical.GoalkeeperRating
+                        ),
+                        new MentalAttributes(
+                            data.player.attributes.mental.Aggression,
+                            data.player.attributes.mental.Anticipation,
+                            data.player.attributes.mental.Bravery,
+                            data.player.attributes.mental.Composure,
+                            data.player.attributes.mental.Concentration,
+                            data.player.attributes.mental.Decision,
+                            data.player.attributes.mental.Determination,
+                            data.player.attributes.mental.Flair,
+                            data.player.attributes.mental.Leadership,
+                            data.player.attributes.mental.OfftheBall,
+                            data.player.attributes.mental.Positioning,
+                            data.player.attributes.mental.Teamwork,
+                            data.player.attributes.mental.Vision,
+                            data.player.attributes.mental.WorkRate
+                        ),
+                        new TechnicalAttributes(
+                            data.player.attributes.technical.Crossing,
+                            data.player.attributes.technical.Dribbling,
+                            data.player.attributes.technical.Finishing,
+                            data.player.attributes.technical.FirstTouch,
+                            data.player.attributes.technical.FreeKickTaking,
+                            data.player.attributes.technical.Heading,
+                            data.player.attributes.technical.LongShots,
+                            data.player.attributes.technical.LongThrows,
+                            data.player.attributes.technical.Marking,
+                            data.player.attributes.technical.Passing,
+                            data.player.attributes.technical.PenaltyTaking,
+                            data.player.attributes.technical.Tackling,
+                            data.player.attributes.technical.Technique
+                        )
+                    )
                 );
-
+                console.log(this.player);
                 this.playerService.getPlayerClubById(data.player.club_id).subscribe(
                     data => this.club = new Club(
                         data.club.name,

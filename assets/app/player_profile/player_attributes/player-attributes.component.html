@@ -16,7 +16,7 @@
     </div>
 <div class='attributes mental' *ngIf="attributes">
     <div class='attribute-header'>Mental</div>
-    <div class='up'>Aggression <span class='attribute_value'>{{attributes.mental.Aggression}}</span></div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
+    <img class='down-rate' src='../rating_triangle_down.svg' alt='Rating Up or Down' /><div>Aggression <span class='attribute_value'>{{attributes.mental.Aggression}}</span></div><img class='up-rate' src='../rating_triangle.svg' alt='Rating Up or Down'>
     <div>Anticipation <span class='attribute_value'>{{attributes.mental.Anticipation}}</span></div>
     <div>Bravery <span class='attribute_value'>{{attributes.mental.Bravery}}</span></div>
     <div class='down'>Composure <span class='attribute_value'>{{attributes.mental.Composure}}</span></div><img src='../rating_triangle_down.svg' alt='Rating Up or Down'>
@@ -44,22 +44,16 @@
     <div>Goalkeeper Rating <span class='attribute_value'>{{attributes.physical.GoalkeeperRating}}</span></div>
 </div>
 <div class='attributes similar'>
-    <div class='attribute-header'>Other Players in Bayern München</div>
-    <div>Manuel Neuer</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div>Robert Lewandowski</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div>David Alaba</div><img src='../rating_triangle_down.svg' alt='Rating Up or Down'>
-    <div>Franck Ribery</div>
-    <div>Arjen Robben</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-    <div>Mathias Hummels</div><img src='../rating_triangle.svg' alt='Rating Up or Down'>
-</div>
-<div class="divider-line"></div>
-<div class="player-recommend">
-    <h3>Similar Player Profiles from German Bundesliga</h3>
-    <a href=''>Willi Orban</a>
-    <a href=''>Ousmane Dembele</a>
-    <a href=''>Emil Forsberg</a>
-    <a href=''>Pierre-Emerick Aubameyang</a>
-    <a href=''>Timo Horn</a>
-    <a href=''>Marco Reus</a>
-    <a href=''>Marcel Risse</a>
+    <div class='attribute-header'>Other Players in Bundesliga</div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea8e8'>Pierre-Emerick Aubameyang</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea88a'>Timo Horn</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea8e3'>Marco Reus</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea897'>Marcel Risse</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea8e8'>Pierre-Emerick Aubameyang</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea88a'>Timo Horn</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea8e3'>Marco Reus</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea897'>Marcel Risse</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea8bd'>Mats Hummels</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea8cb'>Arjen Robben</a></div>
+    <div><a routerLink='/player/596a53f1c6f20f7f938ea8fd'>Hakan Calhanoglu</a></div>
 </div>
