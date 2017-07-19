@@ -21,12 +21,16 @@ export class PlayerComponent implements OnInit, OnDestroy {
     public player: Player;
     private club: Club;
     private nationality: Nation;
+    private markedFavorite: boolean;
+    private favId: string;
+
     constructor(private route: ActivatedRoute, private playerService: PlayerService){};
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             this.id = params['id'];
 
+        this.getFavorite(this.id);
         this.playerService.getPlayerById(this.id).subscribe(
             data => {
                 this.player = new Player(
@@ -64,6 +68,36 @@ export class PlayerComponent implements OnInit, OnDestroy {
         );
 
         });
+    }
+
+    addFavorite() {
+        const userId = localStorage.getItem('userId');
+        const playerId = this.id;
+        this.playerService.addFavorite(userId, playerId).subscribe(
+            data => {this.markedFavorite = true; this.favId = data.favId;},
+            error => console.log(error)
+        )
+    }
+
+    getFavorite(playerId :string) {
+        const userId = localStorage.getItem('userId');
+        this.playerService.getIfMarkedFavorite(userId, playerId).subscribe(
+            data => {this.markedFavorite = data.markedAsFavorite; this.favId = data.favId;},
+            error => console.log(error)
+        )
+    }
+
+    deleteFavorite() {
+        if (this.favId) {
+            console.log(`Fav id is set at ${this.favId}`);
+            this.playerService.deleteFavorite(this.favId).subscribe(
+                data => {
+                    this.markedFavorite = false;
+                    this.favId = null;
+                },
+                error => console.log(error)
+            )
+        }
     }
 
     ngOnDestroy() {

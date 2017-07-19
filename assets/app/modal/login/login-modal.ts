@@ -22,7 +22,7 @@ export class LoginModalComponent implements OnInit {
             data => {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('userId', data.userId);
-                this.router.navigateByUrl('/player');
+                this.router.navigateByUrl('/');
                 this.errorMessage = null;
             },
             error => this.onError(error)

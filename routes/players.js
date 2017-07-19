@@ -20,7 +20,4 @@ router.get('/search/:name', function(req,res,next) {
   })
 })
 
-
-
-
 module.exports = router;

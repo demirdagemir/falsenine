@@ -44,12 +44,38 @@
                         <div class="info-text">Number</div>
                     </div>
                 </div>
-                <!--
+
                 <div class='four'>
-                    <h2>Playing Positions</h2>
-                    <img src='pitch.svg' alt='Playing Positions'>
+                    <h2 *ngIf='markedFavorite'>Player already marked as favorite.</h2>
+                    <h2 *ngIf='!markedFavorite'>Mark as favorite</h2>
+                    <svg width="48px" height="46px" viewBox="0 0 96 92" version="1.1" (click)='addFavorite()' *ngIf='!markedFavorite'>
+                        <title>Add to Favorites</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="favorite" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="star" transform="translate(-1165.000000, -778.000000)" fill="#CCCCCC">
+                                <g id="Page-1" transform="translate(1165.000000, 778.000000)">
+                                    <polygon id="Fill-1" points="78.301 40.898 56.5 39.1011 48 18.8981 39.6016 39.1011 17.6996 40.898 34.3016 55.199 29.3016 76.5 48.0006 65.102 66.6996 76.5 61.6996 55.199"></polygon>
+                                    <path d="M95.5,35.301 L61.199,32.5002 L48,0.8012 L34.801,32.5002 L0.500002,35.301 L26.602,57.699 L18.7036,91.096998 L48.1016,73.199 L77.4996,91.096998 L69.6012,57.699 L95.5,35.301 Z M72,83.899 L48,69.2 L24,83.899 L30.5,56.501 L9.102,38.2 L37.204,35.8992 L48.005,9.8992 L58.806,35.8992 L86.908,38.2 L65.51,56.501 L72,83.899 Z" id="Fill-2"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <svg width="48px" height="46px" viewBox="0 0 96 92" version="1.1" (click)='deleteFavorite()' *ngIf='markedFavorite'>
+                        <title>Add to Favorites</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="favorite" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="star" transform="translate(-1165.000000, -778.000000)" fill="#00A084">
+                                <g id="Page-1" transform="translate(1165.000000, 778.000000)">
+                                    <polygon id="Fill-1" points="78.301 40.898 56.5 39.1011 48 18.8981 39.6016 39.1011 17.6996 40.898 34.3016 55.199 29.3016 76.5 48.0006 65.102 66.6996 76.5 61.6996 55.199"></polygon>
+                                    <path d="M95.5,35.301 L61.199,32.5002 L48,0.8012 L34.801,32.5002 L0.500002,35.301 L26.602,57.699 L18.7036,91.096998 L48.1016,73.199 L77.4996,91.096998 L69.6012,57.699 L95.5,35.301 Z M72,83.899 L48,69.2 L24,83.899 L30.5,56.501 L9.102,38.2 L37.204,35.8992 L48.005,9.8992 L58.806,35.8992 L86.908,38.2 L65.51,56.501 L72,83.899 Z" id="Fill-2"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
                 </div>
-                -->
+
             </div>
             <player-attributes-component></player-attributes-component>
         </div>

@@ -110,7 +110,7 @@ player-attributes-component {
   }
 }
 .three {
-  grid-column: 5;
+  grid-column: 4;
   display: grid;
   grid-template-columns: 20px repeat(4, 1fr) 20px;
   grid-template-rows: 20% repeat(3, 1fr) 15%;
@@ -166,17 +166,27 @@ player-attributes-component {
 .four {
   grid-column: 5;
   display: grid;
+  grid-template-rows: 40px 60px;
 
   h2 {
     align-self: start;
     justify-self: center;
     font-size: 18px;
     font-weight: 500;
+    grid-row: 1;
   }
 
-  img {
+  svg {
     align-self: center;
     justify-self: center;
+    grid-row: 2;
+    cursor: pointer;
+
+    #favorite #star {
+      &:hover {
+        fill: #F39C12;
+      }
+    }
   }
 }
 

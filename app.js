@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var players = require('./routes/players');
 var clubs = require('./routes/clubs');
 var nations = require('./routes/nations');
+var favorites = require('./routes/favorites');
 
 var app = express();
 mongoose.connect('localhost:27017/falseninedb');
@@ -38,6 +39,7 @@ app.use('/users', users);
 app.use('/players', players);
 app.use('/clubs', clubs);
 app.use('/nations', nations);
+app.use('/favorites', favorites);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

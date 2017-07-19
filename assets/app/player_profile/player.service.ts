@@ -28,4 +28,33 @@ export class PlayerService {
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error.json()));
     }
+
+    addFavorite  (userId :string, playerId :string) {
+        const body = {
+            userId,
+            playerId
+        };
+        const headers = new Headers({'Content-Type' : 'application/json'});
+        return this.http.post('http://localhost:3000/favorites/addFavorite', body, {headers: headers})
+            .map((response: Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    getIfMarkedFavorite (userId :string, playerId :string) {
+        const body = {
+            userId,
+            playerId
+        };
+        const headers = new Headers({'Content-Type' : 'application/json'});
+        return this.http.post('http://localhost:3000/favorites/getFavorite', body, {headers: headers})
+            .map((response: Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    deleteFavorite  (favId :string) {
+        const headers = new Headers({'Content-Type' : 'application/json'});
+        return this.http.delete(`http://localhost:3000/favorites/deleteFavorite/${favId}`, {headers: headers})
+            .map((response: Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
 }
