@@ -1,10 +1,11 @@
 import {Component, Injectable, OnDestroy, OnInit} from '@angular/core'
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Player, Attributes, PhysicalAttributes, MentalAttributes, TechnicalAttributes} from "../viewModels/player.model";
 import {PlayerService} from "./player.service";
 import {Club} from "../viewModels/club.model";
 import {Nation} from "../viewModels/nation.model";
 import {Observable} from "rxjs/Observable";
+import {AuthService} from "../modal/authentication/auth.service";
 
 @Component({
     selector: 'player-component',
@@ -23,9 +24,14 @@ export class PlayerComponent implements OnInit, OnDestroy {
     private markedFavorite: boolean;
     private favId: string;
 
-    constructor(private route: ActivatedRoute, private playerService: PlayerService){};
+    constructor(private router: Router, private route: ActivatedRoute, private playerService: PlayerService, private  authService: AuthService){};
 
     ngOnInit() {
+
+        if(!this.authService.isLoggedIn()) {
+            this.router.navigateByUrl('/');
+        }
+
         this.sub = this.route.params.subscribe(params => {
             this.id = params['id'];
 

@@ -20,4 +20,100 @@ router.get('/search/:name', function(req,res,next) {
   })
 })
 
+router.patch('/updateMentalRating/:id', function (req, res, next) {
+  Player.findById(req.params.id, function (err, player) {
+    if (err) {
+      return res.status(500).json({
+        title: 'An error occurred',
+        error: err
+      });
+    }
+    if (!player) {
+      return res.status(500).json({
+        title: 'No Player Found!',
+        error: {message: 'Player not found'}
+      });
+    }
+
+    player.attributes.mental = req.body;
+
+    player.save(function (err, result) {
+      if (err) {
+        return res.status(500).json({
+          title: 'An error occurred',
+          error: err
+        });
+      }
+      res.status(200).json({
+        message: 'Updated player rating',
+        obj: result
+      });
+    });
+  });
+});
+
+router.patch('/updateTechnicalRating/:id', function (req, res, next) {
+  Player.findById(req.params.id, function (err, player) {
+    if (err) {
+      return res.status(500).json({
+        title: 'An error occurred',
+        error: err
+      });
+    }
+    if (!player) {
+      return res.status(500).json({
+        title: 'No Player Found!',
+        error: {message: 'Player not found'}
+      });
+    }
+
+    player.attributes.technical = req.body;
+
+    player.save(function (err, result) {
+      if (err) {
+        return res.status(500).json({
+          title: 'An error occurred',
+          error: err
+        });
+      }
+      res.status(200).json({
+        message: 'Updated player rating',
+        obj: result
+      });
+    });
+  });
+});
+
+router.patch('/updatePhysicalRating/:id', function (req, res, next) {
+  Player.findById(req.params.id, function (err, player) {
+    if (err) {
+      return res.status(500).json({
+        title: 'An error occurred',
+        error: err
+      });
+    }
+    if (!player) {
+      return res.status(500).json({
+        title: 'No Player Found!',
+        error: {message: 'Player not found'}
+      });
+    }
+
+    player.attributes.physical = req.body;
+
+    player.save(function (err, result) {
+      if (err) {
+        return res.status(500).json({
+          title: 'An error occurred',
+          error: err
+        });
+      }
+      res.status(200).json({
+        message: 'Updated player rating',
+        obj: result
+      });
+    });
+  });
+});
+
 module.exports = router;
