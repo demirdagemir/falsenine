@@ -6,7 +6,7 @@
             </div>
             <input class='email-login' type='email' id='email_login' name='email' placeholder='Please enter your email.' formControlName='email' />
             <input class='password-login' type='password' id='password' placeholder='Please enter your password.' formControlName='password'>
-            <button class='submit-login' type='submit'>
+            <button class='submit-login' type='submit' [disabled]='!loginForm.valid'>
                 <img src='../login.svg' alt='Login Icon' />
                 Login</button>
             <div class='errorMessage'>{{ errorMessage }}</div>

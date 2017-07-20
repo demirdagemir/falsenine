@@ -11,24 +11,32 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 export class SignupModalComponent implements OnInit {
     signUpForm: FormGroup;
+    validated: boolean;
+    submitted: boolean;
 
     constructor(private authService: AuthService) {}
 
     onSubmit() {
-        const user = new User(
-            this.signUpForm.value.email,
-            this.signUpForm.value.username,
-            this.signUpForm.value.password,
-            this.signUpForm.value.firstName,
-            this.signUpForm.value.lastName,
-            this.signUpForm.value.favoritePlayer,
-            this.signUpForm.value.favoriteTeam
-        );
-        this.authService.signup(user).subscribe(
-            data => console.log(data),
-            error => console.log(error)
-        );
-        this.signUpForm.reset();
+
+        this.validated = this.validate();
+        this.submitted = true;
+        if (this.validated) {
+            const user = new User(
+                this.signUpForm.value.email,
+                this.signUpForm.value.username,
+                this.signUpForm.value.password,
+                this.signUpForm.value.firstName,
+                this.signUpForm.value.lastName,
+                this.signUpForm.value.favoritePlayer,
+                this.signUpForm.value.favoriteTeam
+            );
+            this.authService.signup(user).subscribe(
+                data => console.log(data),
+                error => console.log(error)
+            );
+            this.signUpForm.reset();
+            this.submitted = false;
+        }
     }
 
     ngOnInit() {
@@ -45,6 +53,20 @@ export class SignupModalComponent implements OnInit {
             favoritePlayer: new FormControl(null)
 
         })
+    }
+
+    validate () {
+        if (this.signUpForm.value.email  != '' &&
+                this.signUpForm.value.username  != '' &&
+                this.signUpForm.value.password  != '' &&
+                this.signUpForm.value.firstName  != '' &&
+                this.signUpForm.value.lastName  != '' &&
+                this.signUpForm.value.favoritePlayer  != '' &&
+                this.signUpForm.value.favoriteTeam != '') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
